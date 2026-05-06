@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge to Recipe Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Fridge to Recipe</h1>
+            <p>Enter what you have, and AI will tell you what to cook.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <form id="ingredient-form">
+                    <input 
+                        type="text" 
+                        id="ingredient-input" 
+                        placeholder="E.g., Chicken breast, garlic, heavy cream..." 
+                        autocomplete="off"
+                    >
+                    <button type="submit" id="add-btn">Add</button>
+                </form>
+            </section>
+
+            <section class="ingredients-container">
+                <ul id="ingredients-list"></ul>
+                <p id="empty-state">No ingredients added yet.</p>
+            </section>
+
+            <button id="generate-btn" disabled>Generate Recipe</button>
+
+            <div id="loading-state" class="hidden">
+                <div class="spinner"></div>
+                <p>The Chef is thinking...</p>
+            </div>
+
+            <section id="recipe-output" class="hidden">
+                <h2 id="recipe-title">Recipe Title</h2>
+                <div class="recipe-meta">
+                    <span id="recipe-time">⏱ Time: </span>
+                </div>
+                
+                <div class="recipe-grid">
+                    <div class="recipe-ingredients-needed">
+                        <h3>What you need</h3>
+                        <ul id="recipe-ingredients-list"></ul>
+                    </div>
+                    
+                    <div class="recipe-instructions">
+                        <h3>Instructions</h3>
+                        <ol id="recipe-instructions-list"></ol>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
